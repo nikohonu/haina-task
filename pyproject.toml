@@ -1,18 +1,18 @@
 [tool.poetry]
-name = "rsp-task"
+name = "haina-task"
 version = "0.1.0"
-description = "A GUI task manager based on projects, subtasks, recurrence, and assignment of 1 of 3 categories to each task: research, training, practice"
+description = "A simple task manager for my own needs."
 authors = ["Niko Honu <nikohonu@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "rsp_task"}]
-include = ["rsp_task/main.qml"]
+packages = [{include = "haina_task"}]
 
 [tool.poetry.dependencies]
 python = "<3.12,>=3.11"
-pyside6 = "^6.5.2"
 appdirs = "^1.4.4"
 peewee = "^3.16.3"
+typer = {extras = ["all"], version = "^0.9.0"}
+rich = "^13.5.2"
 
 [tool.poetry.group.dev.dependencies]
 python-lsp-server = "^1.7.4"
@@ -28,12 +28,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-rsp-task = "rsp_task.__main__:main"
+ht = "haina_task.__main__:main"
 
 [tool.pylsp-mypy]
 enabled = true
 live_mode = true
 strict = true
-
-[tool.pylint]
-extension-pkg-allow-list = "PySide6"
